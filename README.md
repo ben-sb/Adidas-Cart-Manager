@@ -30,8 +30,8 @@ Run cart_manager.py (a server is a good idea)
 ## Credits
 
 Written by:
-Twitter - https://twitter.com/ciphersuites
-Discord - sd#1000
+* Twitter - https://twitter.com/ciphersuites
+* Discord - sd#1000
 
 
 *Please note that the concept was not my idea, I wrote this as no publically available cart managers supported Sole AIO at the time*
