@@ -9,7 +9,7 @@ You can get the IDs for your Discord channels by following this guide https://su
 
 ## Config
 
-* Token - the token for your Discord bot - get it from the Discord applications page
+* **Token** - the token for your Discord bot - get it from the Discord applications page
 * private_channel_id - ID of the private channel where the carts are sent to by Sole AIO (the channel which you entered the webhook into Sole AIO)
 * public_channel_id - ID of the public channel where the users can react to claim carts
 * max_num_carts - the maximum number of carts one user can claim
