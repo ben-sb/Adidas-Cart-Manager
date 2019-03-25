@@ -1,5 +1,6 @@
 # Adidas-Cart-Manager
 
+
 ## Creating Discord Application
 
 First, you need a Discord bot/application.
