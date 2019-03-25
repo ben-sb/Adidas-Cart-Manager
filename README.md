@@ -1,5 +1,6 @@
 # Adidas-Cart-Manager
 
+A Python program for protecting Sole AIO Adidas carts. It adds a claiming system to the carts and will stop users seeing each others details. Instructions for use are below.
 
 ## Creating Discord Application
 
@@ -24,3 +25,6 @@ The settings for the Cart Manager are found in config.json. Open this up with an
 ## To Run
 
 Run cart_manager.py (a server is a good idea)
+
+
+* *Note that was not my idea, I wrote this as no publically available cart managers supported Sole AIO at the time* *
