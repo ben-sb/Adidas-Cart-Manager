@@ -27,4 +27,6 @@ The settings for the Cart Manager are found in config.json. Open this up with an
 Run cart_manager.py (a server is a good idea)
 
 
-*Note that the concept was not my idea, I wrote this as no publically available cart managers supported Sole AIO at the time*
+
+
+*Please note that the concept was not my idea, I wrote this as no publically available cart managers supported Sole AIO at the time*
