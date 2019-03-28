@@ -9,6 +9,7 @@ class Cart:
         self.email = ""
         self.password = ""
         self.url = ""
+        self.mobile_url = ""
         self.image_url = ""
         self.claimed = False
 
@@ -63,6 +64,8 @@ class CartManager:
                 cart.email = field['value']
             elif field['name'] == 'Password':
                 cart.password = field['value']
+            elif field['name'] == 'Mobile Link':
+                cart.mobile_url = field['value']
 
         cart_manager.add_cart(cart)
 
@@ -82,6 +85,7 @@ class CartManager:
         e.add_field(name='Size', value=cart.size, inline=True)
         e.add_field(name='Email', value=cart.email, inline=False)
         e.add_field(name='Password', value=cart.password, inline=False)
+        e.add_field(name='Mobile Link', value=cart.mobile_url, inline=False)
 
         return e
 
