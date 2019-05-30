@@ -1,7 +1,8 @@
 # Cart Manager for Sole AIO Adidas carts
 # Written by SD
 # twitter.com/ciphersuites
-
+# Edited by box
+# twitter.com/parcels
 
 from classes.discord_bot import DiscordBot
 import discord
@@ -38,7 +39,3 @@ except discord.errors.LoginFailure:
 
 except Exception as e:
     print("Unknown error: " + str(e))
-
-
-
-

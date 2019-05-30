@@ -1,7 +1,7 @@
 {
   "token": "",
-  "private_channel_id": "",
-  "public_channel_id": "",
+  "private_channel_id": 0123456789012345678,
+  "public_channel_id": 0123456789012345678,
   "max_num_carts": 10,
   "cooldown_time": 30
 }

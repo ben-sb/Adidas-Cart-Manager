@@ -1,5 +1,6 @@
 import discord
 
+
 class Cart:
     def __init__(self):
         self.id = -1
@@ -12,6 +13,7 @@ class Cart:
         self.mobile_url = ""
         self.image_url = ""
         self.claimed = False
+
 
 class CartManager:
     def __init__(self):
@@ -38,41 +40,40 @@ class CartManager:
 
         return None
 
-
-
-    def create_cart(self, cart_manager, original_embed, id):
+    @staticmethod
+    def create_cart(cart_manager, original_embed, id):
 
         e = discord.Embed(title="Cart #" + str(id), color=0x00ff00)
-        e.set_thumbnail(url=original_embed['thumbnail']['url'])
+        e.set_thumbnail(url=original_embed.thumbnail.url)
         e.set_footer(text="Sole AIO Cart Manager", icon_url="https://i.imgur.com/ceVbiGI.png")
 
         cart = Cart()
         cart.id = id
-        cart.url = original_embed['url']
-        cart.pid = original_embed['title'].split(" ")[0]
-        cart.image_url = original_embed['thumbnail']['url']
+        cart.url = original_embed.url
+        cart.pid = original_embed.title.split(' ')[0]
+        cart.image_url = original_embed.thumbnail.url
 
-        for field in original_embed['fields']:
-            if field['name'] == 'Region':
-                cart.region = field['value']
-                e.add_field(name=field['name'], value=field['value'], inline=field['inline'])
-                e.add_field(name='PID', value=original_embed['title'].split(" ")[0], inline=True)
-            elif field['name'] == 'Size':
-                cart.size = field['value']
-                e.add_field(name=field['name'], value=field['value'], inline=field['inline'])
-            elif field['name'] == 'Email':
-                cart.email = field['value']
-            elif field['name'] == 'Password':
-                cart.password = field['value']
-            elif field['name'] == 'Mobile Link':
-                cart.mobile_url = field['value']
+        cart.region = original_embed.fields[0].value
+        e.add_field(name='Region', value=cart.region, inline=True)
+
+        cart.pid = original_embed.title.split(' ')[0]
+        e.add_field(name='PID', value=cart.pid, inline=True)
+
+        cart.size = original_embed.fields[1].value
+        e.add_field(name='Size', value=cart.size, inline=True)
+
+        # fields we don't want to add to the publicly visible embed
+        cart.email = original_embed.fields[2].value
+        cart.password = original_embed.fields[3].value
+        cart.mobile_url = original_embed.fields[5].value
 
         cart_manager.add_cart(cart)
 
         e.add_field(name="To Claim", value="React to this message", inline=False)
         return e
 
-    def create_cart_embed(self, cart):
+    @staticmethod
+    def create_cart_embed(cart):
 
         e = discord.Embed(title="Click to login", color=0x00ff00)
         e.url = cart.url
@@ -89,20 +90,16 @@ class CartManager:
 
         return e
 
-    def modify_embed(self, embed, user):
-
-        embed.title += " - Claimed by %s"%str(user)
+    @staticmethod
+    def modify_embed(embed, user):
+        embed.title += " - Claimed by %s" % str(user)
         return embed
 
 
-
 class Utils:
-    def get_channel(self, server, id):
+    @staticmethod
+    def get_channel(server, id):
         for channel in server.channels:
             if channel.id == id:
                 return channel
         return 'none'
-
-
-    def check_reaction(self, reaction, user):
-        return not user.bot
