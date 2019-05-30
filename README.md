@@ -24,6 +24,11 @@ The settings for the Cart Manager are found in config.json. Open this up with an
 
 ## To Run
 
+Download and install Python 3.6 (won't work on 3.7).
+
+Install discordpy:
+* py -3 -m pip install -U discord.py
+
 Run cart_manager.py (a server is a good idea)
 
 
@@ -32,6 +37,10 @@ Run cart_manager.py (a server is a good idea)
 Written by:
 * Twitter - https://twitter.com/ciphersuites
 * Discord - sd#1000
+
+Edited by:
+* Twitter - https://twitter.com/parcels
+* Discord - box#9447
 
 
 *Please note that the concept was not my idea, I wrote this as no publically available cart managers supported Sole AIO at the time*
